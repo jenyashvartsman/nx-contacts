@@ -1,7 +1,7 @@
 {
-  "name": "nx-contacts",
+  "name": "contacts-server",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/nx-contacts/src",
+  "sourceRoot": "apps/contacts-server/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -10,10 +10,10 @@
       "options": {
         "target": "node",
         "compiler": "tsc",
-        "outputPath": "dist/apps/nx-contacts",
-        "main": "apps/nx-contacts/src/main.ts",
-        "tsConfig": "apps/nx-contacts/tsconfig.app.json",
-        "assets": ["apps/nx-contacts/src/assets"]
+        "outputPath": "dist/apps/contacts-server",
+        "main": "apps/contacts-server/src/main.ts",
+        "tsConfig": "apps/contacts-server/tsconfig.app.json",
+        "assets": ["apps/contacts-server/src/assets"]
       },
       "configurations": {
         "production": {
@@ -22,8 +22,8 @@
           "inspect": false,
           "fileReplacements": [
             {
-              "replace": "apps/nx-contacts/src/environments/environment.ts",
-              "with": "apps/nx-contacts/src/environments/environment.prod.ts"
+              "replace": "apps/contacts-server/src/environments/environment.ts",
+              "with": "apps/contacts-server/src/environments/environment.prod.ts"
             }
           ]
         }
@@ -32,11 +32,11 @@
     "serve": {
       "executor": "@nrwl/js:node",
       "options": {
-        "buildTarget": "nx-contacts:build"
+        "buildTarget": "contacts-server:build"
       },
       "configurations": {
         "production": {
-          "buildTarget": "nx-contacts:build:production"
+          "buildTarget": "contacts-server:build:production"
         }
       }
     },
@@ -44,14 +44,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/nx-contacts/**/*.ts"]
+        "lintFilePatterns": ["apps/contacts-server/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/nx-contacts/jest.config.ts",
+        "jestConfig": "apps/contacts-server/jest.config.ts",
         "passWithNoTests": true
       }
     }
