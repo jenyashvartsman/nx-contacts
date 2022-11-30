@@ -1,9 +1,11 @@
 import * as express from 'express';
 import * as path from 'path';
+import * as bodyParser from 'body-parser';
 
-import ContactsRoute from './routes/ContactsRoute';
+import ContactsRoute from './app/routes/ContactsRoute';
 
 const app = express();
+app.use(bodyParser.json());
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 

@@ -1,6 +1,7 @@
 import { Router } from 'express';
+import * as contactsController from '../controllers/ContactsController';
+
 const router = Router();
-import * as contactsController from '../controllers/ContactController';
 
 router
   .get('/', contactsController.getContacts)
